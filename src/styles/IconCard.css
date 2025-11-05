@@ -1,0 +1,65 @@
+.icon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 140px;
+}
+
+.icon-card:hover {
+  border-color: #2563eb;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+  transform: scale(1.05);
+}
+
+.icon-card:active {
+  transform: scale(0.98);
+}
+
+.icon-card--selected {
+  border-color: #2563eb;
+  background-color: #eff6ff;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.icon-card__icon {
+  width: 48px;
+  height: 48px;
+  color: #1a1a1a;
+  transition: color 0.2s ease;
+}
+
+.icon-card--selected .icon-card__icon {
+  color: #2563eb;
+}
+
+.icon-card__name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .icon-card {
+    padding: 2rem;
+    min-height: 160px;
+  }
+
+  .icon-card__icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .icon-card__name {
+    font-size: 0.9375rem;
+  }
+}
+

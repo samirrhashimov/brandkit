@@ -1,0 +1,34 @@
+.icon-embed {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  background: transparent;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.icon-embed--empty {
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+  color: #666666;
+  font-size: 0.875rem;
+}
+
+.icon-embed__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.icon-embed__item:hover {
+  transform: scale(1.1);
+}
+
+.icon-embed__svg {
+  width: 100%;
+  height: 100%;
+}
+
