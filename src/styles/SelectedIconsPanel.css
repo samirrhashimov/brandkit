@@ -138,9 +138,9 @@
 }
 
 .selected-panel__url {
-  font-family: 'Courier New', monospace;
+  font-family: 'Verdana', monospace;
   font-size: 0.8125rem;
-  color: #2563eb;
+  color: #000000;
   font-weight: 600;
 }
 

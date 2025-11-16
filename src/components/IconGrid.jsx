@@ -1,5 +1,5 @@
 import React from 'react';
-import IconCard from './IconCard';
+import IconCard from './IconCard.jsx';
 import '../styles/IconGrid.css';
 
 const IconGrid = ({ icons, selectedIcons, onIconSelect, enableLazyLoad = false }) => {

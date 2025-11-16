@@ -17,32 +17,25 @@ const SelectedIconsPanel = ({ selectedIcons, onClear }) => {
     if (selectedIcons.length === 0) return '';
     const embedUrl = generateEmbedUrl();
     
-    return `<!-- Embed using iframe -->
-<iframe 
-  src="${embedUrl}" 
-  width="200" 
-  height="60" 
-  frameborder="0"
-  title="Brand Icons">
-</iframe>
-
-<!-- Or embed using direct link -->
-<a href="${embedUrl}" target="_blank">
-  View Icons
-</a>
-
-<!-- Custom size: add ?size=64 -->
-<iframe 
-  src="${embedUrl}?size=64" 
-  width="250" 
-  height="80" 
-  frameborder="0">
-</iframe>`;
+    return `<iframe src="${embedUrl}" width="200" height="60" frameborder="0" title="Brandkit"></iframe>
+`;
   };
 
   const generateNpmCode = () => {
-    const iconIds = selectedIcons.map((icon) => icon.id).join(', ');
-    return `// Install\nnpm install brandkit-icons\n\n// Usage\nimport { ${iconIds} } from 'brandkit-icons';\n\n// In your component\n<div className="icon">\n  {${selectedIcons[0]?.id || 'iconName'}}\n</div>`;
+    if (selectedIcons.length === 0) return `// Install\nnpm install brandkitjs`;
+
+    // Helper: convert id (e.g. "github") to PascalCase export name (e.g. "Github")
+    const toPascal = (s) =>
+      s
+        .split(/[-_\s]/)
+        .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+        .join('');
+
+    const namedExports = selectedIcons.map((icon) => toPascal(icon.id)).join(', ');
+    const firstId = selectedIcons[0]?.id || 'icon-id';
+
+    return `npm install brandkitjs\n\nimport { ${namedExports} } from 'brandkitjs';\n\n${selectedIcons.map((icon) => `<${toPascal(icon.id)} size="24px" />`)
+      .join('\n')}`;
   };
 
   const generateDirectUrl = () => {

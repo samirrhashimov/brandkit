@@ -17,86 +17,112 @@ A comprehensive React component library with 40+ brand icons for social media, d
 - **Responsive** - Works perfectly on all screen sizes
 - **TypeScript Ready** - Full JSX support
 
-## Installation
+## NPM Usage (recommended)
 
-Install the package using npm:
+- Package name: `brandkitjs` (published to npm)
 
-```bash
-npm i brandkit
-```
-
-Or with yarn:
+Install (pick your package manager):
 
 ```bash
-yarn add brandkit
+npm install brandkitjs
+# or
+# yarn add brandkitjs
+# pnpm add brandkitjs
 ```
 
-Or with pnpm:
+Quick notes:
+- This package is published as ESM (`type: "module"`, `module` field). Use named imports so bundlers can tree-shake unused icons.
+- Peer dependencies: `react` and `react-dom` — keep those in your project's dependencies.
 
-```bash
-pnpm add brandkit
-```
-
-## Quick Start
-
-### Basic Usage
+Basic usage (tree-shakable - preferred):
 
 ```jsx
-import { GitHub } from 'brandkit';
+import { Github } from 'brandkitjs';
 
 export default function App() {
-  return <GitHub />;
+  return <Github />;
 }
 ```
 
-### Customize Size and Color
+Customize size and color:
 
 ```jsx
-import { GitHub } from 'brandkit';
+import { Github } from 'brandkitjs';
 
 export default function App() {
-  return <GitHub size="48px" color="#E34F26" />;
+  return <Github size="48px" color="#E34F26" />;
 }
 ```
 
-### Use Individual Icon Components
+Import only what you need (bundle-friendly):
 
 ```jsx
-import { Facebook, Instagram, Github, Twitter } from 'brandkit';
+import { Facebook, Instagram, Github } from 'brandkitjs';
 
-export default function SocialLinks() {
+function SocialLinks() {
   return (
-    <div className="social-icons">
+    <div style={{ display: 'flex', gap: 12 }}>
       <Facebook size="24px" />
       <Instagram size="24px" />
       <Github size="24px" />
-      <Twitter size="24px" />
     </div>
   );
 }
 ```
 
-### Dynamic Icon Selection
-
-Use the `Icon` component to dynamically select icons by ID:
+Dynamic selection (by id):
 
 ```jsx
-import { Icon } from 'brandkit';
+import { Icon } from 'brandkitjs';
 
-export default function App() {
-  return (
-    <div>
-      <Icon id="github" size="24px" />
-      <Icon id="react" size="32px" color="#61DAFB" />
-      <Icon id="nodejs" size="24px" />
-    </div>
-  );
+function DynamicIcon({ id }) {
+  return <Icon id={id} size="24px" />;
 }
 ```
+
+Bundler tips
+- Ensure your bundler prefers the `module` field (ESM) so tree-shaking works: Rollup, webpack (production mode + sideEffects:false), Parcel, Vite all work well.
+- If you see unused icons in your final bundle, verify your bundler is using the ESM build and that you import named exports (not a large default object).
+
+CommonJS / Node consumers
+- The package is published as ESM. In a CommonJS-only environment, use dynamic import interop:
+
+```js
+(async () => {
+  const pkg = await import('brandkitjs');
+  const { Github } = pkg;
+  // use Github
+})();
+```
+
+CDN usage (ES module build)
+- You can import the ESM build directly from a CDN for quick demos (modern browsers only):
+
+```html
+<script type="module">
+  import { Github } from 'https://cdn.jsdelivr.net/npm/brandkitjs@1.0.2/dist/index.esm.js';
+  // mount your React app that uses <Github />
+</script>
+```
+
+Version pinning and upgrades
+- Pin a specific version in `package.json` to avoid unexpected changes: `npm i brandkitjs@1.0.2`.
+- Use `npm outdated` / `npm update` to manage updates.
+
+TypeScript
+- Type definitions are provided via the `types` field (`dist/index.d.ts`). You can import components normally in TSX files:
+
+```tsx
+import { Github, Icon } from 'brandkitjs';
+
+const Cmp: React.FC = () => <Github size="24px" />;
+```
+
+If you want smaller runtime bundles, prefer named imports and let your bundler tree-shake unused icons.
 
 ## 📚 Available Icons
 
-### Social Media (16)
+### Social Media (17)
 Facebook, Instagram, Twitter, YouTube, LinkedIn, TikTok, Discord, Slack, Spotify, Twitch, Pinterest, Reddit, WhatsApp, Telegram, Snapchat, Medium, Google
 
 ### Development Tools (22)
@@ -112,7 +138,7 @@ Figma
 Retrieve all available icons with metadata:
 
 ```jsx
-import { getAllIcons } from 'brandkit';
+import { getAllIcons } from 'brandkitjs';
 
 const allIcons = getAllIcons();
 console.log(allIcons); // Array of 40+ icon objects
@@ -123,7 +149,7 @@ console.log(allIcons); // Array of 40+ icon objects
 Get icons by their category:
 
 ```jsx
-import { getIconsByCategory } from 'brandkit';
+import { getIconsByCategory } from 'brandkitjs';
 
 const socialIcons = getIconsByCategory('social');
 const devTools = getIconsByCategory('development');
@@ -134,7 +160,7 @@ const devTools = getIconsByCategory('development');
 Search for icons by name or category:
 
 ```jsx
-import { searchIcons } from 'brandkit';
+import { searchIcons } from 'brandkitjs';
 
 const results = searchIcons('react');
 // Returns: [{ id: 'react', name: 'React', ... }]
@@ -164,8 +190,8 @@ import {
   Telegram,
   Snapchat,
   Medium,
-  Google
-  
+  Google,
+
   // Development Tools
   ReactIcon,
   Vue,
@@ -192,16 +218,17 @@ import {
   Kotlin,
   Go,
   Ruby,
-  
+
   // Design Tools
   Figma,
-  
+
   // Utilities
   Icon,
   getAllIcons,
   getIconsByCategory,
   searchIcons
-} from 'brandkit';
+} from 'brandkitjs';
+
 ```
 
 ## Component Props
@@ -221,7 +248,7 @@ All icon components accept the following props:
 
 ```jsx
 import React from 'react';
-import { Facebook, Instagram, Twitter, LinkedIn } from 'brandkit';
+import { Facebook, Instagram, Twitter, LinkedIn } from 'brandkitjs';
 
 export default function SocialBar() {
   return (
@@ -239,7 +266,7 @@ export default function SocialBar() {
 
 ```jsx
 import React from 'react';
-import { ReactIcon, NodeJS, MongoDB, Docker } from 'brandkit';
+import { ReactIcon, NodeJS, MongoDB, Docker } from 'brandkitjs';
 
 export default function TechStack() {
   return (
@@ -269,7 +296,7 @@ export default function TechStack() {
 
 ```jsx
 import React, { useState } from 'react';
-import { searchIcons, Icon } from 'brandkit';
+import { searchIcons, Icon } from 'brandkitjs';
 
 export default function IconGrid() {
   const [query, setQuery] = useState('');
@@ -316,7 +343,7 @@ The package works great with TypeScript. All components accept standard React pr
 
 ```tsx
 import React from 'react';
-import { Icon, GitHub } from 'brandkit';
+import { Icon, Github } from 'brandkitjs';
 
 interface IconProps {
   size?: string;
@@ -325,7 +352,7 @@ interface IconProps {
 
 const MyComponent: React.FC<IconProps> = ({ size = '24px', color }) => (
   <div>
-    <GitHub size={size} color={color} />
+    <Github size={size} color={color} />
   </div>
 );
 

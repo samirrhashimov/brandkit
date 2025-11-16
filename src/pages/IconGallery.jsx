@@ -56,14 +56,6 @@ const IconGallery = () => {
         <div className="gallery__grid-section">
           <div className="gallery__grid-header">
             <h2 className="gallery__title">All Icons ({filteredIcons.length})</h2>
-            {selectedIcons.length > 0 && (
-              <button
-                className="gallery__view-embed-btn"
-                onClick={handleViewEmbed}
-              >
-                View Embed Preview
-              </button>
-            )}
           </div>
           <IconGrid
             icons={filteredIcons}
@@ -83,7 +75,7 @@ const IconGallery = () => {
 
       <footer className="gallery__footer">
         <p className="gallery__footer-text">
-          © Brandkit 2025 – Open Icon Infrastructure
+          © 2025 Brandkit - Linzaapps
         </p>
       </footer>
     </div>

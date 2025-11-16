@@ -13,17 +13,18 @@ const Home = () => {
   const exampleIcons = iconsData.slice(0, 6);
 
   const filteredIcons = searchQuery
-    ? iconsData.filter((icon) =>
-        icon.name.toLowerCase().includes(searchQuery.toLowerCase())
-      )
-    : exampleIcons;
+  ? iconsData.filter((icon) =>
+      icon.name.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+  : [];
+
 
   const handleGetEmbedCode = () => {
     navigate('/gallery');
   };
 
   const handleUseNpm = () => {
-    navigate('/gallery');
+    window.open('https://www.npmjs.com/package/brandkitjs', '_blank');
   };
 
   const handleIconSelect = (icon) => {
@@ -53,16 +54,40 @@ const Home = () => {
           />
         </section>
 
+        {filteredIcons.length > 0 && (
+  <section className="home__examples">
+    <h3 className="home__examples-title">
+      {searchQuery && 'Search Results'}
+    </h3>
+    <IconGrid
+      icons={filteredIcons}
+      selectedIcons={[]}
+      onIconSelect={handleIconSelect}
+      enableLazyLoad={false}
+    />
+  </section>
+)}
+
+
         <section className="home__examples">
-          <h3 className="home__examples-title">
-            {searchQuery ? 'Search Results' : 'Popular Icons'}
-          </h3>
-          <IconGrid
-            icons={filteredIcons}
-            selectedIcons={[]}
-            onIconSelect={handleIconSelect}
-            enableLazyLoad={false}
-          />
+          <div className="home__carousel-container">
+            <div className="home__carousel">
+              {[...iconsData, ...iconsData].map((icon, index) => (
+                <div
+                  key={`${icon.id}-${index}`}
+                  className="home__carousel-item"
+                  onClick={() => handleIconSelect(icon)}
+                  title={icon.name}
+                >
+                  <div
+                    className="home__carousel-icon"
+                    dangerouslySetInnerHTML={{ __html: icon.svg }}
+                    style={{ color: icon.color }}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
 
         <section className="home__cta">
@@ -83,7 +108,7 @@ const Home = () => {
 
       <footer className="home__footer">
         <p className="home__footer-text">
-          © Brandkit 2025 – Open Icon Infrastructure
+          © 2025 Brandkit - Linzaapps
         </p>
       </footer>
     </div>

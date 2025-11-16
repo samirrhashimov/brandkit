@@ -1,9 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import IconGallery from './pages/IconGallery';
-import EmbedPreview from './pages/EmbedPreview';
-import IconEmbed from './pages/IconEmbed';
+import Home from './pages/Home.jsx';
+import IconGallery from './pages/IconGallery.jsx';
+import IconEmbed from './pages/IconEmbed.jsx';
 import './styles/App.css';
 
 const App = () => {
@@ -13,7 +12,6 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/gallery" element={<IconGallery />} />
-          <Route path="/embed" element={<EmbedPreview />} />
           <Route path="/icons/:iconIds" element={<IconEmbed />} />
         </Routes>
       </div>
