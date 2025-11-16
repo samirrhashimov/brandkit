@@ -4,37 +4,42 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Downloads](https://img.shields.io/npm/dm/brandkitjs.svg)](https://www.npmjs.com/package/brandkitjs)
 
-A comprehensive React component library with 40+ brand icons for social media, development tools, and design software. Perfect for adding professional branding elements to your React applications.
+Brandkit is a lightweight, tree-shakeable React icon library providing high-quality SVG brand icons for social media, developer tools, languages, and design tools. It is designed for easy integration, customization, and minimal bundle impact.
+
+## Highlights
+
+- **Total Icons:** 42
+- **Categories:** Social (16), Development & Tools (25), Design (1)
+- **Formats:** SVG (scalable, editable)
+- **Bundle-friendly:** ESM build with named exports for tree-shaking
+- **Customization:** `size`, `color`, `className`, and `style` props
 
 ## Features
 
-- **40+ Professional SVG Icons** - Carefully crafted brand icons
 - **React Components** - Drop-in React components for easy integration
-- **Individual Exports** - Import only what you need
-- **Search & Filter** - Built-in utilities to find and organize icons
-- **Lightweight** - Minified size ~15KB, gzip ~5KB
-- **Customizable** - Full control over size and color
-- **Responsive** - Works perfectly on all screen sizes
-- **TypeScript Ready** - Full JSX support
+- **Individual Exports** - Import only the icons you need to keep bundles small
+- **Search & Filter Utilities** - Helpers to find icons by name or category
+- **Lightweight** - Minified size ~15KB, gzip ~5KB (approx.)
+- **TypeScript Ready** - Provided type definitions for easy TSX usage
 
 ## NPM Usage (recommended)
 
 - Package name: `brandkitjs` (published to npm)
 
-Install (pick your package manager):
+Install (choose your package manager):
 
-```bash
+```powershell
 npm install brandkitjs
 # or
 # yarn add brandkitjs
 # pnpm add brandkitjs
 ```
 
-Quick notes:
-- This package is published as ESM (`type: "module"`, `module` field). Use named imports so bundlers can tree-shake unused icons.
-- Peer dependencies: `react` and `react-dom` — keep those in your project's dependencies.
+Notes:
+- The package is published as ESM (`type: "module"`, `module` field). Use named imports so bundlers can tree-shake unused icons.
+- Peer dependencies: `react` and `react-dom`.
 
-Basic usage (tree-shakable - preferred):
+Basic usage:
 
 ```jsx
 import { Github } from 'brandkitjs';
@@ -50,7 +55,7 @@ Customize size and color:
 import { Github } from 'brandkitjs';
 
 export default function App() {
-  return <Github size="48px" color="#E34F26" />;
+  return <Github size="48px" color="#181717" />;
 }
 ```
 
@@ -70,22 +75,8 @@ function SocialLinks() {
 }
 ```
 
-Dynamic selection (by id):
-
-```jsx
-import { Icon } from 'brandkitjs';
-
-function DynamicIcon({ id }) {
-  return <Icon id={id} size="24px" />;
-}
-```
-
-Bundler tips
-- Ensure your bundler prefers the `module` field (ESM) so tree-shaking works: Rollup, webpack (production mode + sideEffects:false), Parcel, Vite all work well.
-- If you see unused icons in your final bundle, verify your bundler is using the ESM build and that you import named exports (not a large default object).
-
 CommonJS / Node consumers
-- The package is published as ESM. In a CommonJS-only environment, use dynamic import interop:
+- In CommonJS-only environments use dynamic import interop:
 
 ```js
 (async () => {
@@ -96,7 +87,6 @@ CommonJS / Node consumers
 ```
 
 CDN usage (ES module build)
-- You can import the ESM build directly from a CDN for quick demos (modern browsers only):
 
 ```html
 <script type="module">
@@ -105,194 +95,77 @@ CDN usage (ES module build)
 </script>
 ```
 
-Version pinning and upgrades
-- Pin a specific version in `package.json` to avoid unexpected changes: `npm i brandkitjs@1.0.2`.
-- Use `npm outdated` / `npm update` to manage updates.
+## Icon Catalog
 
-TypeScript
-- Type definitions are provided via the `types` field (`dist/index.d.ts`). You can import components normally in TSX files:
+Brandkit includes 42 icons across three categories. Below is a concise catalog with IDs and brand colors (hex) taken from the icon metadata.
 
-```tsx
-import { Github, Icon } from 'brandkitjs';
+## Social Icons (16)
 
-const Cmp: React.FC = () => <Github size="24px" />;
-```
+| Name       | ID         | Color     |
+|-----------|------------|-----------|
+| Facebook  | `facebook` | `#1877F2` |
+| Instagram | `instagram` | `#E4405F` |
+| Twitter   | `twitter`  | `#1DA1F2` |
+| YouTube   | `youtube`  | `#FF0000` |
+| Google    | `google`   | `#4285F4` |
+| LinkedIn  | `linkedin` | `#0A66C2` |
+| TikTok    | `tiktok`   | `#000000` |
+| Discord   | `discord`  | `#5865F2` |
+| Spotify   | `spotify`  | `#1DB954` |
+| Twitch    | `twitch`   | `#9146FF` |
+| Pinterest | `pinterest`| `#E60023` |
+| Reddit    | `reddit`   | `#FF4500` |
+| WhatsApp  | `whatsapp` | `#25D366` |
+| Telegram  | `telegram` | `#26A5E4` |
+| Snapchat  | `snapchat` | `#FFFC00` |
+| Medium    | `medium`   | `#000000` |
 
-If you want smaller runtime bundles, prefer named imports and let your bundler tree-shake unused icons.
 
-## 📚 Available Icons
+## Development & Tools (25)
 
-### Social Media (17)
-Facebook, Instagram, Twitter, YouTube, LinkedIn, TikTok, Discord, Slack, Spotify, Twitch, Pinterest, Reddit, WhatsApp, Telegram, Snapchat, Medium, Google
+| Name        | ID           | Color     |
+|-------------|--------------|-----------|
+| GitHub      | `github`     | `#181717` |
+| NPM         | `npm`        | `#CB3837` |
+| React       | `react`      | `#61DAFB` |
+| Vue.js      | `vue`        | `#4FC08D` |
+| Slack       | `slack`      | `#4A154B` |
+| HTML5       | `html5`      | `#E34F26` |
+| CSS3        | `css3`       | `#1572B6` |
+| JavaScript  | `javascript` | `#F7DF1E` |
+| Python      | `python`     | `#3776AB` |
+| Java        | `java`       | `#007396` |
+| Node.js     | `nodejs`     | `#339933` |
+| TypeScript  | `typescript` | `#3178C6` |
+| Angular     | `angular`    | `#DD0031` |
+| Docker      | `docker`     | `#2496ED` |
+| Git         | `git`        | `#F05032` |
+| MongoDB     | `mongodb`    | `#47A248` |
+| VS Code     | `vscode`     | `#007ACC` |
+| Bootstrap   | `bootstrap`  | `#7952B3` |
+| Tailwind    | `tailwind`   | `#06B6D4` |
+| WordPress   | `wordpress`  | `#21759B` |
+| Sass        | `sass`       | `#CC6699` |
+| Flutter     | `flutter`    | `#02569B` |
+| Kotlin      | `kotlin`     | `#7F52FF` |
+| Go          | `go`         | `#00ADD8` |
+| Ruby        | `ruby`       | `#CC342D` |
 
-### Development Tools (22)
-React, Vue.js, Angular, Node.js, Python, JavaScript, TypeScript, Java, PHP, Git, Docker, MongoDB, PostgreSQL, VS Code, npm, HTML5, CSS3, Tailwind, Bootstrap, Sass, Flutter, Swift, Kotlin, Go, Ruby, WordPress
 
-### Design Tools (1)
-Figma
+## Design (1)
 
-## Advanced Usage
+| Name  | ID      | Color     |
+|-------|---------|-----------|
+| Figma | `figma` | `#F24E1E` |
 
-### Get All Icons
+## Utilities
 
-Retrieve all available icons with metadata:
+- `getAllIcons()` — Returns an array of all icon metadata objects.
+- `getIconsByCategory(category)` — Filter icons by `social`, `development`, or `design`.
+- `searchIcons(query)` — Search by name or id (case-insensitive).
+- `Icon` component — Dynamic renderer: `<Icon id="github" size="24px" />`.
 
-```jsx
-import { getAllIcons } from 'brandkitjs';
-
-const allIcons = getAllIcons();
-console.log(allIcons); // Array of 40+ icon objects
-```
-
-### Filter by Category
-
-Get icons by their category:
-
-```jsx
-import { getIconsByCategory } from 'brandkitjs';
-
-const socialIcons = getIconsByCategory('social');
-const devTools = getIconsByCategory('development');
-```
-
-### Search Icons
-
-Search for icons by name or category:
-
-```jsx
-import { searchIcons } from 'brandkitjs';
-
-const results = searchIcons('react');
-// Returns: [{ id: 'react', name: 'React', ... }]
-
-const pythonResults = searchIcons('python');
-// Returns: [{ id: 'python', name: 'Python', ... }]
-```
-
-## 📋 All Icon Components
-
-```jsx
-import {
-  // Social Media
-  Facebook,
-  Instagram,
-  Twitter,
-  YouTube,
-  LinkedIn,
-  TikTok,
-  Discord,
-  Slack,
-  Spotify,
-  Twitch,
-  Pinterest,
-  Reddit,
-  WhatsApp,
-  Telegram,
-  Snapchat,
-  Medium,
-  Google,
-
-  // Development Tools
-  ReactIcon,
-  Vue,
-  Angular,
-  NodeJS,
-  Python,
-  JavaScript,
-  TypeScript,
-  Java,
-  PHP,
-  Git,
-  Docker,
-  MongoDB,
-  PostgreSQL,
-  VSCode,
-  NPM,
-  HTML5,
-  CSS3,
-  Tailwind,
-  Bootstrap,
-  Sass,
-  Flutter,
-  Swift,
-  Kotlin,
-  Go,
-  Ruby,
-
-  // Design Tools
-  Figma,
-
-  // Utilities
-  Icon,
-  getAllIcons,
-  getIconsByCategory,
-  searchIcons
-} from 'brandkitjs';
-
-```
-
-## Component Props
-
-All icon components accept the following props:
-
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `size` | string | `'24px'` | Icon size (px, em, rem, etc.) |
-| `color` | string | Icon default color | SVG fill color (hex, rgb, rgba) |
-| `className` | string | undefined | CSS class name |
-| `style` | object | undefined | Inline CSS styles |
-
-## Examples
-
-### Social Media Bar
-
-```jsx
-import React from 'react';
-import { Facebook, Instagram, Twitter, LinkedIn } from 'brandkitjs';
-
-export default function SocialBar() {
-  return (
-    <div style={{ display: 'flex', gap: '16px' }}>
-      <Facebook size="32px" />
-      <Instagram size="32px" />
-      <Twitter size="32px" />
-      <LinkedIn size="32px" />
-    </div>
-  );
-}
-```
-
-### Tech Stack Display
-
-```jsx
-import React from 'react';
-import { ReactIcon, NodeJS, MongoDB, Docker } from 'brandkitjs';
-
-export default function TechStack() {
-  return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
-      <div>
-        <ReactIcon size="48px" color="#61DAFB" />
-        <p>React</p>
-      </div>
-      <div>
-        <NodeJS size="48px" color="#339933" />
-        <p>Node.js</p>
-      </div>
-      <div>
-        <MongoDB size="48px" color="#47A248" />
-        <p>MongoDB</p>
-      </div>
-      <div>
-        <Docker size="48px" color="#2496ED" />
-        <p>Docker</p>
-      </div>
-    </div>
-  );
-}
-```
-
-### Icon Grid with Search
+Example: dynamic icon grid
 
 ```jsx
 import React, { useState } from 'react';
@@ -323,71 +196,44 @@ export default function IconGrid() {
 }
 ```
 
-## Icon Data Structure
+## Popular Combinations
 
-Each icon object contains:
+- Full Stack Developer: `html5,css3,javascript,react,nodejs,mongodb`
+- Web Designer: `html5,css3,figma,bootstrap`
+- Social Media Manager: `facebook,instagram,twitter,linkedin,pinterest`
+- DevOps: `docker,git,github`
+- Mobile Developer: `flutter,react`
 
-```javascript
-{
-  id: 'github',           // Unique identifier
-  name: 'GitHub',         // Display name
-  category: 'development', // Category type
-  color: '#181717',       // Brand color
-  svg: '<svg>...</svg>'   // SVG content
-}
-```
+## Component Props
 
-## TypeScript Support
+All icon components accept the following props:
 
-The package works great with TypeScript. All components accept standard React props and JSX types are fully supported.
-
-```tsx
-import React from 'react';
-import { Icon, Github } from 'brandkitjs';
-
-interface IconProps {
-  size?: string;
-  color?: string;
-}
-
-const MyComponent: React.FC<IconProps> = ({ size = '24px', color }) => (
-  <div>
-    <Github size={size} color={color} />
-  </div>
-);
-
-export default MyComponent;
-```
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `size` | string | `'24px'` | Icon size (px, em, rem, etc.) |
+| `color` | string | Icon default color | SVG fill color (hex, rgb, rgba) |
+| `className` | string | undefined | CSS class name |
+| `style` | object | undefined | Inline CSS styles |
 
 ## Performance
 
-- All icons are SVG-based for crisp rendering at any size
-- Tree-shakeable - unused icons are eliminated in production builds
-- No external dependencies beyond React
-- Optimized for performance with minimal re-renders
+- SVG-based icons for crisp rendering at any size
+- Tree-shakeable ESM build to eliminate unused icons in production
+- No runtime dependencies beyond React
 
-## License
+## TypeScript
 
-MIT License - see [LICENSE](https://github.com/samirrhashimov/brandkit/blob/main/LICENSE) for details
+Type definitions are provided via the `types` field (`dist/index.d.ts`). Import components normally in TSX files.
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request or open an Issue on [GitHub](https://github.com/samirrhashimov/brandkit).
+Contributions are welcome! Submit a Pull Request or open an Issue on [GitHub](https://github.com/samirrhashimov/brandkit).
 
-## 📞 Support
+## Support & Links
 
-- 📧 Email: samirhasimov10@gmail.com
-- 🐛 Issues: [GitHub Issues](https://github.com/samirrhashimov/brandkit/issues)
-- 💬 Discussions: [GitHub Discussions](https://github.com/samirrhashimov/brandkit/discussions)
-
-## 🔗 Links
-
-- [GitHub Repository](https://github.com/samirrhashimov/brandkit)
-- [NPM Package](https://www.npmjs.com/package/brandkitjs)
-- [License](https://github.com/samirrhashimov/brandkit/blob/main/LICENSE)
+- **Email:** samirhasimov10@gmail.com
+- **Issues:** https://github.com/samirrhashimov/brandkit/issues
+- **Repository:** https://github.com/samirrhashimov/brandkit
+- **NPM Package:** https://www.npmjs.com/package/brandkitjs
 
 ---
-
-**Made with ❤️ by Samir Hashimov**
-
-Version: 1.0.2 | Last Updated: November 2025
