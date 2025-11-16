@@ -1,0 +1,9 @@
+[build]
+  # Netlify build komutu
+  command = "npm install --legacy-peer-deps && npm run build"
+  
+  # Build sonrası Netlify'nin servis edeceği klasör
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22.21.1"
