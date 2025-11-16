@@ -1,11 +1,57 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+// NPM Package Exports
+export { 
+  LogoHtml,
+  Icon,
+  getAllIcons,
+  getIconsByCategory,
+  searchIcons,
+  // Individual icon components
+  Facebook,
+  Instagram,
+  Github,
+  Twitter,
+  YouTube,
+  LinkedIn,
+  TikTok,
+  Discord,
+  Slack,
+  NPM,
+  ReactIcon,
+  Vue,
+  Spotify,
+  Twitch,
+  Google,
+  Pinterest,
+  Reddit,
+  WhatsApp,
+  Telegram,
+  Snapchat,
+  Medium,
+  HTML5,
+  CSS3,
+  JavaScript,
+  Python,
+  Java,
+  PHP,
+  NodeJS,
+  TypeScript,
+  Angular,
+  Docker,
+  Git,
+  MongoDB,
+  PostgreSQL,
+  VSCode,
+  Figma,
+  Bootstrap,
+  Tailwind,
+  WordPress,
+  Sass,
+  Flutter,
+  Swift,
+  Kotlin,
+  Go,
+  Ruby,
+  // Alias
+  logoHtml
+} from './components/Icons';
 
