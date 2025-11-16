@@ -19,6 +19,10 @@ const Home = () => {
   : [];
 
 
+  const handleViewDocs = () => {
+    navigate('/docs');
+  };
+
   const handleGetEmbedCode = () => {
     navigate('/gallery');
   };
@@ -102,6 +106,12 @@ const Home = () => {
             onClick={handleUseNpm}
           >
             Use via NPM
+          </button>
+          <button
+            className="home__cta-btn home__cta-btn--secondary"
+            onClick={handleViewDocs}
+          >
+            Docs
           </button>
         </section>
       </main>

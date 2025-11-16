@@ -90,7 +90,7 @@ CDN usage (ES module build)
 
 ```html
 <script type="module">
-  import { Github } from 'https://cdn.jsdelivr.net/npm/brandkitjs@1.0.3/dist/index.esm.js';
+  import { Github } from 'https://cdn.jsdelivr.net/npm/brandkitjs@1.0.4/dist/index.esm.js';
   // mount your React app that uses <Github />
 </script>
 ```
