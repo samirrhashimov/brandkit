@@ -53,5 +53,5 @@ export {
   Ruby,
   // Alias
   logoHtml
-} from './components/Icons';
+} from './components/Icons.jsx';
 
