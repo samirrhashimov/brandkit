@@ -1,28 +1,28 @@
 # Brandkit - NPM Icon Library
 
-[![npm version](https://badge.fury.io/js/brandkit.svg)](https://www.npmjs.com/package/brandkit)
+[![npm version](https://badge.fury.io/js/brandkitjs.svg)](https://www.npmjs.com/package/brandkitjs)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Downloads](https://img.shields.io/npm/dm/brandkit.svg)](https://www.npmjs.com/package/brandkit)
+[![Downloads](https://img.shields.io/npm/dm/brandkitjs.svg)](https://www.npmjs.com/package/brandkitjs)
 
 A comprehensive React component library with 40+ brand icons for social media, development tools, and design software. Perfect for adding professional branding elements to your React applications.
 
-## ✨ Features
+## Features
 
-- 🎨 **40+ Professional SVG Icons** - Carefully crafted brand icons
-- ⚛️ **React Components** - Drop-in React components for easy integration
-- 🎯 **Individual Exports** - Import only what you need
-- 🔍 **Search & Filter** - Built-in utilities to find and organize icons
-- 📦 **Lightweight** - Minified size ~15KB, gzip ~5KB
-- 🎪 **Customizable** - Full control over size and color
-- 📱 **Responsive** - Works perfectly on all screen sizes
-- ✅ **TypeScript Ready** - Full JSX support
+- **40+ Professional SVG Icons** - Carefully crafted brand icons
+- **React Components** - Drop-in React components for easy integration
+- **Individual Exports** - Import only what you need
+- **Search & Filter** - Built-in utilities to find and organize icons
+- **Lightweight** - Minified size ~15KB, gzip ~5KB
+- **Customizable** - Full control over size and color
+- **Responsive** - Works perfectly on all screen sizes
+- **TypeScript Ready** - Full JSX support
 
-## 📦 Installation
+## Installation
 
 Install the package using npm:
 
 ```bash
-npm install brandkit
+npm i brandkit
 ```
 
 Or with yarn:
@@ -37,25 +37,25 @@ Or with pnpm:
 pnpm add brandkit
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Basic Usage
 
 ```jsx
-import { LogoHtml } from 'brandkit';
+import { GitHub } from 'brandkit';
 
 export default function App() {
-  return <LogoHtml />;
+  return <GitHub />;
 }
 ```
 
 ### Customize Size and Color
 
 ```jsx
-import { LogoHtml } from 'brandkit';
+import { GitHub } from 'brandkit';
 
 export default function App() {
-  return <LogoHtml size="48px" color="#E34F26" />;
+  return <GitHub size="48px" color="#E34F26" />;
 }
 ```
 
@@ -97,15 +97,15 @@ export default function App() {
 ## 📚 Available Icons
 
 ### Social Media (16)
-Facebook, Instagram, Twitter, YouTube, LinkedIn, TikTok, Discord, Slack, Spotify, Twitch, Pinterest, Reddit, WhatsApp, Telegram, Snapchat, Medium
+Facebook, Instagram, Twitter, YouTube, LinkedIn, TikTok, Discord, Slack, Spotify, Twitch, Pinterest, Reddit, WhatsApp, Telegram, Snapchat, Medium, Google
 
 ### Development Tools (22)
 React, Vue.js, Angular, Node.js, Python, JavaScript, TypeScript, Java, PHP, Git, Docker, MongoDB, PostgreSQL, VS Code, npm, HTML5, CSS3, Tailwind, Bootstrap, Sass, Flutter, Swift, Kotlin, Go, Ruby, WordPress
 
-### Design Tools (2)
-Figma, Google
+### Design Tools (1)
+Figma
 
-## 🔧 Advanced Usage
+## Advanced Usage
 
 ### Get All Icons
 
@@ -164,6 +164,7 @@ import {
   Telegram,
   Snapchat,
   Medium,
+  Google
   
   // Development Tools
   ReactIcon,
@@ -194,18 +195,16 @@ import {
   
   // Design Tools
   Figma,
-  Google,
   
   // Utilities
   Icon,
   getAllIcons,
   getIconsByCategory,
-  searchIcons,
-  LogoHtml
+  searchIcons
 } from 'brandkit';
 ```
 
-## 🎨 Component Props
+## Component Props
 
 All icon components accept the following props:
 
@@ -216,7 +215,7 @@ All icon components accept the following props:
 | `className` | string | undefined | CSS class name |
 | `style` | object | undefined | Inline CSS styles |
 
-## 💡 Examples
+## Examples
 
 ### Social Media Bar
 
@@ -297,7 +296,7 @@ export default function IconGrid() {
 }
 ```
 
-## 🎯 Icon Data Structure
+## Icon Data Structure
 
 Each icon object contains:
 
@@ -311,24 +310,13 @@ Each icon object contains:
 }
 ```
 
-## 📦 Bundle Size
-
-- **Minified**: ~15KB
-- **Gzip Compressed**: ~5KB
-
-## 🔄 React Version Support
-
-- React 16.8+
-- React 17+
-- React 18+
-
-## 🛠️ TypeScript Support
+## TypeScript Support
 
 The package works great with TypeScript. All components accept standard React props and JSX types are fully supported.
 
 ```tsx
 import React from 'react';
-import { Icon, LogoHtml } from 'brandkit';
+import { Icon, GitHub } from 'brandkit';
 
 interface IconProps {
   size?: string;
@@ -337,25 +325,25 @@ interface IconProps {
 
 const MyComponent: React.FC<IconProps> = ({ size = '24px', color }) => (
   <div>
-    <LogoHtml size={size} color={color} />
+    <GitHub size={size} color={color} />
   </div>
 );
 
 export default MyComponent;
 ```
 
-## 🚀 Performance
+## Performance
 
 - All icons are SVG-based for crisp rendering at any size
 - Tree-shakeable - unused icons are eliminated in production builds
 - No external dependencies beyond React
 - Optimized for performance with minimal re-renders
 
-## 📄 License
+## License
 
 MIT License - see [LICENSE](https://github.com/samirrhashimov/brandkit/blob/main/LICENSE) for details
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request or open an Issue on [GitHub](https://github.com/samirrhashimov/brandkit).
 
@@ -368,11 +356,11 @@ Contributions are welcome! Please feel free to submit a Pull Request or open an 
 ## 🔗 Links
 
 - [GitHub Repository](https://github.com/samirrhashimov/brandkit)
-- [NPM Package](https://www.npmjs.com/package/brandkit)
+- [NPM Package](https://www.npmjs.com/package/brandkitjs)
 - [License](https://github.com/samirrhashimov/brandkit/blob/main/LICENSE)
 
 ---
 
 **Made with ❤️ by Samir Hashimov**
 
-Version: 1.0.0 | Last Updated: November 2025
+Version: 1.0.2 | Last Updated: November 2025

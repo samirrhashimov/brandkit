@@ -9,8 +9,7 @@
   "types": "dist/index.d.ts",
   "files": [
     "dist",
-    "README.md",
-    "npmsetup.md"
+    "README.md"
   ],
   "repository": {
     "type": "git",
