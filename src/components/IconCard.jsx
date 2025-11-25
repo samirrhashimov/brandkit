@@ -19,11 +19,12 @@ const IconCard = ({ icon, isSelected, onSelect, isLazy, onIntersect }) => {
       { threshold: 0.1 }
     );
 
-    observer.observe(iconRef.current);
+    const currentRef = iconRef.current;
+    observer.observe(currentRef);
 
     return () => {
-      if (iconRef.current) {
-        observer.unobserve(iconRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, [isLazy, icon.id, onIntersect]);
@@ -51,4 +52,3 @@ const IconCard = ({ icon, isSelected, onSelect, isLazy, onIntersect }) => {
 };
 
 export default IconCard;
-

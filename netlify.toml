@@ -1,6 +1,6 @@
 [build]
   # Netlify build komutu - demo sitesini build eder
-  command = "npm install --legacy-peer-deps && npm run build"
+  command = "npm install --legacy-peer-deps && CI=false npm run build"
   
   # Build sonrası Netlify'nin servis edeceği klasör (react-scripts build/ klasörüne çıktı verir)
   publish = "build"

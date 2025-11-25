@@ -3,10 +3,8 @@ import IconCard from './IconCard.jsx';
 import '../styles/IconGrid.css';
 
 const IconGrid = ({ icons, selectedIcons, onIconSelect, enableLazyLoad = false }) => {
-  const [loadedIcons, setLoadedIcons] = React.useState(new Set());
-
-  const handleIntersect = (iconId) => {
-    setLoadedIcons((prev) => new Set([...prev, iconId]));
+  const handleIntersect = () => {
+    // Placeholder for lazy load intersection
   };
 
   const isIconSelected = (iconId) => {
@@ -36,4 +34,3 @@ const IconGrid = ({ icons, selectedIcons, onIconSelect, enableLazyLoad = false }
 };
 
 export default IconGrid;
-
