@@ -1,9 +1,13 @@
-# Brandkit - NPM Icon Library
+<h1 align="center">Brandkit</h1>
 
-[![npm version](https://badge.fury.io/js/brandkitjs.svg)](https://www.npmjs.com/package/brandkitjs)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Downloads](https://img.shields.io/npm/dm/brandkitjs.svg)](https://www.npmjs.com/package/brandkitjs)
-
+<p align="center">
+<img src="https://skillicons.dev/icons?i=react,js,ts,npm,rollup" />
+</p>
+<p align="center">
+   <a href="https://www.npmjs.com/package/brandkitjs"><img src="https://badge.fury.io/js/brandkitjs.svg" alt="npm version"></a>
+   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
+   <a href="https://www.npmjs.com/package/brandkitjs"><img src="https://img.shields.io/npm/dm/brandkitjs.svg" alt="Downloads"></a>
+</p>
 Brandkit is a lightweight, tree-shakeable React icon library providing high-quality SVG brand icons for social media, developer tools, languages, and design tools. It is designed for easy integration, customization, and minimal bundle impact.
 
 ## Highlights
@@ -229,11 +233,21 @@ Type definitions are provided via the `types` field (`dist/index.d.ts`). Import 
 
 Contributions are welcome! Submit a Pull Request or open an Issue on [GitHub](https://github.com/samirrhashimov/brandkit).
 
-## Support & Links
+## Security
+If you discover a security vulnerability in the project, **do not open a public issue**.  
+Instead, submit a private report through the [Security advisories](https://github.com/samirrhashimov/brandkit/security/advisories) section.  
 
-- **Email:** samirrhashimov@proton.me
-- **Issues:** https://github.com/samirrhashimov/brandkit/issues
+---
+
+## License
+This project is licensed under the **MIT License**. For more details, see the [LICENSE](LICENSE) file.
+
+---
+## Support
+
+For issues and questions, please open an issue on [GitHub](https://github.com/samirrhashimov/brandkit/issues).
+
+## Links
 - **Repository:** https://github.com/samirrhashimov/brandkit
 - **NPM Package:** https://www.npmjs.com/package/brandkitjs
-
 ---
