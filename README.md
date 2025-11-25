@@ -231,7 +231,7 @@ Contributions are welcome! Submit a Pull Request or open an Issue on [GitHub](ht
 
 ## Support & Links
 
-- **Email:** samirhasimov10@gmail.com
+- **Email:** samirrhashimov@proton.me
 - **Issues:** https://github.com/samirrhashimov/brandkit/issues
 - **Repository:** https://github.com/samirrhashimov/brandkit
 - **NPM Package:** https://www.npmjs.com/package/brandkitjs
