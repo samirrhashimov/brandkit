@@ -1,6 +1,6 @@
 {
   "name": "brandkitjs",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A modern way to use brand icons in your React applications - 40+ social, development, and design tool icons",
   "type": "module",
   "private": false,
